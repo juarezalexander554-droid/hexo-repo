@@ -27,7 +27,7 @@ fb_app_id:
 
 # Profile
 nickname: 一个人的宇宙
-description: 去你妈的流媒体平台。
+description: 一个后摇乐队。
 # Load fontawesome icons? Also see the links option
 icons: false
 
@@ -77,5 +77,5 @@ valine:
 # Donate
 donate:
   enable: true
-  AliPayQR: http://7b1evr.com1.z0.glb.clouddn.com/donate/alipayQR.jpg
-  WeChatQR: http://7b1evr.com1.z0.glb.clouddn.com/donate/wechatQR.jpg
+  AliPayQR: https://hexo-repo.pages.dev/images/alipay.jpg
+  WeChatQR: https://hexo-repo.pages.dev/images/wechat.jpg
