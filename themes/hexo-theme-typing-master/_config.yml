@@ -26,9 +26,8 @@ fb_app_id:
 
 
 # Profile
-nickname: NickName
-description: Lorem ipsum dolor sit amet, **consectetur adipiscing elit.** Fusce eget urna vitae velit *eleifend interdum at ac nisi. In nec ligula lacus. Cum sociis natoque* penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed eu cursus erat, ut dapibus quam. Aliquam eleifend dolor vitae [libero pharetra](http://hexo.io) adipiscing. Etiam adipiscing dolor a quam tempor, eu convallis nulla varius. Aliquam sollicitudin risus a porta aliquam.
-
+nickname: 一个人的宇宙
+description: 去你妈的流媒体平台。
 # Load fontawesome icons? Also see the links option
 icons: false
 
@@ -38,12 +37,6 @@ icons: false
 # NOTICE) Use the fontawesome icon names without the fa- prefix (http://fontawesome.io/cheatsheet/)
 links:
   book: /archives/
-  globe: https://github.com/geekplux/hexo-theme-typing
-  twitter: https://twitter.com/
-  github-alt: https://github.com/
-  youtube-play: https://www.youtube.com/
-  stack-overflow: https://stackoverflow.com/
-  google-plus: https://plus.google.com/
   rss: /atom.xml
 
 # nav position (top, left. top is default)
@@ -83,10 +76,6 @@ valine:
 
 # Donate
 donate:
-  enable: false
-  github: https://github.com/geekplux
-  paypal: https://www.paypal.me/geekplux
-  bitcoin: 1AVngxh56oLvAzXsEFnzccUohZdHswjC7j
-  BTCQR: http://7b1evr.com1.z0.glb.clouddn.com/donate/bitcoin.png
+  enable: true
   AliPayQR: http://7b1evr.com1.z0.glb.clouddn.com/donate/alipayQR.jpg
   WeChatQR: http://7b1evr.com1.z0.glb.clouddn.com/donate/wechatQR.jpg
