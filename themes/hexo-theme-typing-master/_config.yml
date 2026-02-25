@@ -29,7 +29,7 @@ fb_app_id:
 nickname: 一个人的宇宙
 description: 来自中国东海岸的后摇滚/器乐摇滚乐队，一直在画面与声音的联系中无限探索并不断尝试将两者进行转换，作品中多呈现对宇宙及空间的思考。
 # Load fontawesome icons? Also see the links option
-icons: true
+icons: false
 
 # Footer area links
 # NOTICE) If you set "icons: false" link names will be clear text
@@ -37,6 +37,7 @@ icons: true
 # NOTICE) Use the fontawesome icon names without the fa- prefix (http://fontawesome.io/cheatsheet/)
 links:
   文章: /archives/
+  订阅: /atom.xml
 
 # nav position (top, left. top is default)
 nav: left
