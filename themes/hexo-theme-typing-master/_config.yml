@@ -37,7 +37,6 @@ icons: false
 # NOTICE) Use the fontawesome icon names without the fa- prefix (http://fontawesome.io/cheatsheet/)
 links:
   文章: /archives/
-  收藏: javascript:void(0)
 
 # nav position (top, left. top is default)
 nav: left
