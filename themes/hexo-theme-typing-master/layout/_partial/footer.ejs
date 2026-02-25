@@ -2,6 +2,18 @@
   <footer id="footer" class="home-footer footer">
     <div id="copyright" class="copyright">
       &copy; <%= date(new Date(), 'YYYY') %> <%= config.author || config.title %>  <%= __('powered_by') %> <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme &copy; <a href="https://github.com/geekplux" target="_blank">GeekPlux</a>
+    </div>
+    <% if (theme.icons){ %>
+      <ul class="footer-links">
+        <% for (var key in theme.links) { %>
+          <% if (key === '订阅') { %>
+            <li><a href="<%= theme.links[key] %>" onclick="var bubble = document.createElement('div'); bubble.textContent = '按 Ctrl+D 收藏此网页'; bubble.style.cssText = 'position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: #333; color: #fff; padding: 15px 25px; border-radius: 8px; font-size: 14px; z-index: 9999; box-shadow: 0 4px 12px rgba(0,0,0,0.3);'; document.body.appendChild(bubble); setTimeout(() => bubble.remove(), 2000); return false;"><span class="fa fa-<%= key %>"></span></a></li>
+          <% } else { %>
+            <li><a href="<%- url_for(theme.links[key]) %>"><span class="fa fa-<%= key %>"></span></a></li>
+          <% } %>
+        <% } %>
+      </ul>
+    <% } %>
 <% } else if (is_archive()) { %>
   <footer id="footer" class="archive-footer footer">
     <% if (theme.icons){ %>
