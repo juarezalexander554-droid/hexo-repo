@@ -8,7 +8,7 @@
       <ul class="footer-links">
         <% for (var key in theme.links) { %>
           <% if (key === '订阅') { %>
-            <li><a href="<%= theme.links[key] %>" onclick="alert('按 Ctrl+D 收藏此网页'); return false;"><span class="fa fa-<%= key %>"></span></a></li>
+            <li><a href="<%= theme.links[key] %>" title="按 Ctrl+D 收藏此网页" style="cursor: pointer;"><span class="fa fa-<%= key %>"></span></a></li>
           <% } else { %>
             <li><a href="<%- url_for(theme.links[key]) %>"><span class="fa fa-<%= key %>"></span></a></li>
           <% } %>
