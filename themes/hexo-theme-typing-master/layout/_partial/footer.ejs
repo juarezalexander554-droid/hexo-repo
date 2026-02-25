@@ -7,7 +7,11 @@
     <% if (theme.icons){ %>
       <ul class="footer-links">
         <% for (var key in theme.links) { %>
-          <li><a href="<%- url_for(theme.links[key]) %>"><span class="fa fa-<%= key %>"></span></a></li>
+          <% if (key === '订阅') { %>
+            <li><a href="<%= theme.links[key] %>" onclick="alert('按 Ctrl+D 收藏此网页'); return false;"><span class="fa fa-<%= key %>"></span></a></li>
+          <% } else { %>
+            <li><a href="<%- url_for(theme.links[key]) %>"><span class="fa fa-<%= key %>"></span></a></li>
+          <% } %>
         <% } %>
       </ul>
 	  <% } %>
