@@ -6,12 +6,9 @@
     <% if (theme.icons){ %>
       <ul class="footer-links">
         <% for (var key in theme.links) { %>
-          <% if (key === '收藏') { %>
-            <li><a href="javascript:void(0)" onclick="window.open('data:text/html,<html><head><title>如何收藏</title><style>body{font-family:Arial;padding:40px;text-align:center;background:#f5f5f5}h1{color:#333}.tip{background:#fff;padding:20px;border-radius:8px;max-width:500px;margin:20px auto;box-shadow:0 2px 8px rgba(0,0,0,0.1)}</style></head><body><h1>💾 如何收藏此网页</h1><div class=\"tip\"><p style=\"font-size:18px;margin:20px 0\"><strong>按 Ctrl+D</strong> (Windows/Linux)</p><p style=\"font-size:18px;margin:20px 0\"><strong>按 Cmd+D</strong> (Mac)</p><p style=\"color:#666;margin-top:30px\">或点击浏览器地址栏右侧的星标图标</p></div></body></html>','bookmark','width=600,height=400'); return false;" style="cursor: pointer;"><span class="fa fa-bookmark"></span></a></li>
-          <% } else { %>
-            <li><a href="<%- url_for(theme.links[key]) %>"><span class="fa fa-<%= key %>"></span></a></li>
-          <% } %>
+          <li><a href="<%- url_for(theme.links[key]) %>"><span class="fa fa-<%= key %>"></span></a></li>
         <% } %>
+        <li><a href="javascript:void(0)" onclick="window.open('data:text/html,<html><head><title>如何收藏</title><style>body{font-family:Arial;padding:40px;text-align:center;background:#f5f5f5}h1{color:#333}.tip{background:#fff;padding:20px;border-radius:8px;max-width:500px;margin:20px auto;box-shadow:0 2px 8px rgba(0,0,0,0.1)}</style></head><body><h1>💾 如何收藏此网页</h1><div class=\"tip\"><p style=\"font-size:18px;margin:20px 0\"><strong>按 Ctrl+D</strong> (Windows/Linux)</p><p style=\"font-size:18px;margin:20px 0\"><strong>按 Cmd+D</strong> (Mac)</p><p style=\"color:#666;margin-top:30px\">或点击浏览器地址栏右侧的星标图标</p></div></body></html>','bookmark','width=600,height=400'); return false;" style="cursor: pointer;"><span class="fa fa-bookmark"></span></a></li>
       </ul>
     <% } %>
 <% } else if (is_archive()) { %>
@@ -19,12 +16,9 @@
     <% if (theme.icons){ %>
       <ul class="footer-links">
         <% for (var key in theme.links) { %>
-          <% if (key === '收藏') { %>
-            <li><a href="javascript:void(0)" onclick="window.open('data:text/html,<html><head><title>如何收藏</title><style>body{font-family:Arial;padding:40px;text-align:center;background:#f5f5f5}h1{color:#333}.tip{background:#fff;padding:20px;border-radius:8px;max-width:500px;margin:20px auto;box-shadow:0 2px 8px rgba(0,0,0,0.1)}</style></head><body><h1>💾 如何收藏此网页</h1><div class=\"tip\"><p style=\"font-size:18px;margin:20px 0\"><strong>按 Ctrl+D</strong> (Windows/Linux)</p><p style=\"font-size:18px;margin:20px 0\"><strong>按 Cmd+D</strong> (Mac)</p><p style=\"color:#666;margin-top:30px\">或点击浏览器地址栏右侧的星标图标</p></div></body></html>','bookmark','width=600,height=400'); return false;" style="cursor: pointer;"><span class="fa fa-bookmark"></span></a></li>
-          <% } else { %>
-            <li><a href="<%- url_for(theme.links[key]) %>"><span class="fa fa-<%= key %>"></span></a></li>
-          <% } %>
+          <li><a href="<%- url_for(theme.links[key]) %>"><span class="fa fa-<%= key %>"></span></a></li>
         <% } %>
+        <li><a href="javascript:void(0)" onclick="window.open('data:text/html,<html><head><title>如何收藏</title><style>body{font-family:Arial;padding:40px;text-align:center;background:#f5f5f5}h1{color:#333}.tip{background:#fff;padding:20px;border-radius:8px;max-width:500px;margin:20px auto;box-shadow:0 2px 8px rgba(0,0,0,0.1)}</style></head><body><h1>💾 如何收藏此网页</h1><div class=\"tip\"><p style=\"font-size:18px;margin:20px 0\"><strong>按 Ctrl+D</strong> (Windows/Linux)</p><p style=\"font-size:18px;margin:20px 0\"><strong>按 Cmd+D</strong> (Mac)</p><p style=\"color:#666;margin-top:30px\">或点击浏览器地址栏右侧的星标图标</p></div></body></html>','bookmark','width=600,height=400'); return false;" style="cursor: pointer;"><span class="fa fa-bookmark"></span></a></li>
       </ul>
 	  <% } %>
   <hr/>
