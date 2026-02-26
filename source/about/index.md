@@ -89,10 +89,25 @@ function decodeMorse() {
     return;
   }
 
-  const words = input.split(' / ');
+  // 支持多种分隔符格式
+  let words;
+  if (input.includes(' / ')) {
+    words = input.split(' / ');
+  } else if (input.includes('/')) {
+    words = input.split('/');
+  } else {
+    words = [input];
+  }
+
   const result = words.map(word => {
-    const chars = word.split(' ');
-    return chars.map(char => morseToChar[char] || '?').join('');
+    let chars;
+    if (word.includes(' ')) {
+      chars = word.trim().split(' ');
+    } else {
+      // 如果没有空格，按照点划符号分组
+      chars = word.trim().match(/[\.\-]+/g) || [];
+    }
+    return chars.map(char => morseToChar[char.trim()] || '?').join('');
   }).join(' ');
 
   document.getElementById('morse-output').textContent = result;
