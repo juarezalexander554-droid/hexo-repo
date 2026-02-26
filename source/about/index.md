@@ -224,7 +224,19 @@ function decodeMorse() {
     } else {
       chars = word.trim().match(/[\.\-]+/g) || [];
     }
-    return chars.map(char => morseToChar[char.trim()] || '?').join('');
+
+    // 逐个字符查找，优先查中文映射
+    return chars.map(char => {
+      const trimmedChar = char.trim();
+      // 先查中文反向映射
+      for (let morse in morseToChineseChar) {
+        if (morse === trimmedChar) {
+          return morseToChineseChar[morse];
+        }
+      }
+      // 再查英文映射
+      return morseToChar[trimmedChar] || '?';
+    }).join('');
   }).join(' ');
 
   document.getElementById('morse-output').textContent = result;
