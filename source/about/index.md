@@ -167,6 +167,14 @@ const morseToChineseChar = {
   '-.-.  .-..  ..-': '氯', '-.-  .-': '钾', '-.-.  .-': '钙'
 };
 
+const charToMorse = {};
+Object.keys(morseToChar).forEach(morse => {
+  charToMorse[morseToChar[morse]] = morse;
+});
+Object.keys(chineseToMorse).forEach(char => {
+  charToMorse[char] = chineseToMorse[char];
+});
+
 function switchTab(tab) {
   const decodePanel = document.getElementById('decode-panel');
   const encodePanel = document.getElementById('encode-panel');
