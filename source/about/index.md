@@ -58,6 +58,16 @@ const morseToChar = {
   '----.': '9'
 };
 
+// 摩斯电码到中文的反向映射
+const morseToChineseChar = {
+  '-.-.' : '中', '..-.' : '文', '...' : '试', '-.' : '你', '....' : '好',
+  '--' : '我', '-.-' : '码', '--.' : '工', '-...' : '编', '.-..' : '解', '.-.' : '器',
+  '.----' : '一', '..---' : '二', '...--' : '三', '....-' : '四', '.....' : '五',
+  '-....' : '六', '--...' : '七', '---..' : '八', '----.' : '九', '-----' : '十',
+  '.-' : '啊', '-...' : '吧', '.' : '呃', '-..' : '呆', '---' : '哦', '.--' : '呕',
+  '-.--' : '呀', '....' : '呵', '--.' : '呼', '-..-' : '呷', '.---' : '呺'
+};
+
 // 中文到摩斯电码映射（使用拼音首字母）
 const chineseToMorse = {
   '中': '-.-.', '文': '..-.', '测': '-.-.', '试': '...', '你': '-.', '好': '....',
@@ -121,10 +131,13 @@ function decodeMorse() {
     if (word.includes(' ')) {
       chars = word.trim().split(' ');
     } else {
-      // 如果没有空格，按照点划符号分组
       chars = word.trim().match(/[\.\-]+/g) || [];
     }
-    return chars.map(char => morseToChar[char.trim()] || '?').join('');
+    return chars.map(char => {
+      const trimmed = char.trim();
+      // 优先查找中文映射，再查找英文映射
+      return morseToChineseChar[trimmed] || morseToChar[trimmed] || '?';
+    }).join('');
   }).join(' ');
 
   document.getElementById('morse-output').textContent = result;
