@@ -1,20 +1,14 @@
-categories: 分类
-search: 搜索
-tags: 标签
-tagcloud: 标签云
-tweets: 推文
-prev: 上一页
-next: 下一页
-comment: 留言
-archive_a: 归档
-archive_b: 归档：%s
-page: 第 %d 页
-recent_posts: 最新文章
-newer: 更新
-older: 更旧
-share: 分享
-powered_by: 由以下技术驱动
-rss_feed: RSS 订阅
-category: 分类
-tag: 标签
-date_published: 发布日期
+﻿categories: 鍒嗙被
+search: 鎼滅储
+tags: 鏍囩
+tagcloud: 鏍囩浜?tweets: 鎺ㄦ枃
+prev: 涓婁竴椤?next: 涓嬩竴椤?comment: 鐣欒█
+archive_a: 褰掓。
+archive_b: 褰掓。锛?s
+page: 绗?%d 椤?recent_posts: 鏈€鏂版枃绔?newer: 鏇存柊
+older: 鏇存棫
+share: 鍒嗕韩
+powered_by: 鐢变互涓嬫妧鏈┍鍔?rss_feed: RSS 璁㈤槄
+category: 鍒嗙被
+tag: 鏍囩
+date_published: 鍙戝竷鏃ユ湡

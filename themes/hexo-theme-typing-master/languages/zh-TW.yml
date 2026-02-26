@@ -1,16 +1,11 @@
-categories: 分類
-search: 搜尋
-tags: 標籤
-tagcloud: 標籤雲
-tweets: 推文
-prev: 上一頁
-next: 下一頁
-comment: 留言
-archive_a: 彙整
-archive_b: 彙整：%s
-page: 第 %d 頁
-recent_posts: 最新文章
-newer: Newer
+﻿categories: 鍒嗛
+search: 鎼滃皨
+tags: 妯欑堡
+tagcloud: 妯欑堡闆?tweets: 鎺ㄦ枃
+prev: 涓婁竴闋?next: 涓嬩竴闋?comment: 鐣欒█
+archive_a: 褰欐暣
+archive_b: 褰欐暣锛?s
+page: 绗?%d 闋?recent_posts: 鏈€鏂版枃绔?newer: Newer
 older: Older
 share: Share
 powered_by: Powered by
