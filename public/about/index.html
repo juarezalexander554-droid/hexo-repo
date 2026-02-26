@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  
+  <title>About | 一个人的宇宙</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="关于网页摩斯电码解码工具在下方输入摩斯电码，点击解码查看对应的文字。         摩斯电码输入：                   解码     清空              解码结果：            const morseToChar &#x3D; {   &#39;.-&#39;: &#39;A&#39;, &#39;-...&#39;: &#39;B&#39;, &#39;-.-.&#39;: &#39;C&#39;, &#39;-..&#39;: &#39;D&#39;, &#39;.&#39;: &#39;E&#39;,   &#39;..-.&#39;">
+<meta property="og:type" content="website">
+<meta property="og:title" content="About">
+<meta property="og:url" content="http://example.com/about/index.html">
+<meta property="og:site_name" content="一个人的宇宙">
+<meta property="og:description" content="关于网页摩斯电码解码工具在下方输入摩斯电码，点击解码查看对应的文字。         摩斯电码输入：                   解码     清空              解码结果：            const morseToChar &#x3D; {   &#39;.-&#39;: &#39;A&#39;, &#39;-...&#39;: &#39;B&#39;, &#39;-.-.&#39;: &#39;C&#39;, &#39;-..&#39;: &#39;D&#39;, &#39;.&#39;: &#39;E&#39;,   &#39;..-.&#39;">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2026-02-26T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-02-26T17:52:20.798Z">
+<meta property="article:author" content="团团">
+<meta name="twitter:card" content="summary">
+  
+  
+    <link rel="shortcut icon" href="/favicon.ico">
+  
+  
+<link rel="stylesheet" href="/css/typing.css">
+
+  
+<link rel="stylesheet" href="/css/donate.css">
+
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 8.1.1"></head>
+
+  
+    
+      <body>
+    
+  
+      <div id="container" class="container">
+        <article id="page-" class="h-entry article article-type-page" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <header id="header" class="header">
+  <nav class="mobile-nav">
+    <h1 class="nickname">一个人的宇宙</h1>
+    <ul class="mobile-nav-menu">
+      <label for="mobile-menu-toggle"><a id="menu-button">&#9776; 菜单</a></label>
+      <input type="checkbox" id="mobile-menu-toggle"/>
+      <ul class="mobile-nav-link">
+        
+        <a href="/">首页</a>
+        
+        <a href="/band">乐队介绍</a>
+        
+        <a href="/about">关于网页</a>
+        
+      </ul>
+    </ul>
+  </nav>
+	
+		<nav id="main-nav" class="main-nav nav-left">
+	
+	
+	  <a class="main-nav-link" href="/">首页</a>
+	
+	  <a class="main-nav-link" href="/band">乐队介绍</a>
+	
+	  <a class="main-nav-link" href="/about">关于网页</a>
+	
+  </nav>
+</header>
+
+  <hr/>
+  <div class="article-inner">
+    
+
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      About
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry typo" itemprop="articleBody">
+      
+        <h1 id="关于网页"><a href="#关于网页" class="headerlink" title="关于网页"></a>关于网页</h1><h2 id="摩斯电码解码工具"><a href="#摩斯电码解码工具" class="headerlink" title="摩斯电码解码工具"></a>摩斯电码解码工具</h2><p>在下方输入摩斯电码，点击解码查看对应的文字。</p>
+<div id="morse-decoder" style="padding: 20px; background: #f5f5f5; border-radius: 8px; margin: 20px 0;">
+  <div style="margin-bottom: 15px;">
+    <label for="morse-input" style="display: block; margin-bottom: 8px; font-weight: bold;">摩斯电码输入：</label>
+    <textarea id="morse-input" placeholder="输入摩斯电码，用空格分隔字符，用 / 分隔单词&#10;例如：.... . .-.. .-.. --- / .-- --- .-. .-.. -.." style="width: 100%; height: 100px; padding: 10px; border: 1px solid #ddd; border-radius: 4px; font-family: monospace;"></textarea>
+  </div>
+  
+  <div style="margin-bottom: 15px;">
+    <button onclick="decodeMorse()" style="padding: 10px 20px; background: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 16px;">解码</button>
+    <button onclick="clearMorse()" style="padding: 10px 20px; background: #6c757d; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 16px; margin-left: 10px;">清空</button>
+  </div>
+  
+  <div>
+    <label for="morse-output" style="display: block; margin-bottom: 8px; font-weight: bold;">解码结果：</label>
+    <div id="morse-output" style="padding: 10px; background: white; border: 1px solid #ddd; border-radius: 4px; min-height: 50px; font-size: 18px;"></div>
+  </div>
+</div>
+
+<script>
+const morseToChar = {
+  '.-': 'A', '-...': 'B', '-.-.': 'C', '-..': 'D', '.': 'E',
+  '..-.': 'F', '--.': 'G', '....': 'H', '..': 'I', '.---': 'J',
+  '-.-': 'K', '.-..': 'L', '--': 'M', '-.': 'N', '---': 'O',
+  '.--.': 'P', '--.-': 'Q', '.-.': 'R', '...': 'S', '-': 'T',
+  '..-': 'U', '...-': 'V', '.--': 'W', '-..-': 'X', '-.--': 'Y',
+  '--..': 'Z', '-----': '0', '.----': '1', '..---': '2', '...--': '3',
+  '....-': '4', '.....': '5', '-....': '6', '--...': '7', '---..': '8',
+  '----.': '9', '.-.-.-': '.', '--..--': ',', '..--..': '?', '.----.': "'",
+  '-.-.-.': '!', '-..-.': '/', '-.--.': '(', '-.--.-': ')', '.-...': '&',
+  '---...': ':', '-.-.-': ';', '-...-': '=', '.-.-.': '+', '-....-': '-',
+  '..--.-': '_', '.-..-.': '"', '...-..-': '$', '.--.-.': '@'
+};
+
+function decodeMorse() {
+  const input = document.getElementById('morse-input').value.trim();
+  if (!input) {
+    document.getElementById('morse-output').textContent = '请输入摩斯电码';
+    return;
+  }
+  
+  const words = input.split(' / ');
+  const result = words.map(word => {
+    const chars = word.split(' ');
+    return chars.map(char => morseToChar[char] || '?').join('');
+  }).join(' ');
+  
+  document.getElementById('morse-output').textContent = result;
+}
+
+function clearMorse() {
+  document.getElementById('morse-input').value = '';
+  document.getElementById('morse-output').textContent = '';
+}
+
+// 回车键解码
+document.getElementById('morse-input').addEventListener('keypress', function(e) {
+  if (e.key === 'Enter' && e.ctrlKey) {
+    decodeMorse();
+  }
+});
+</script>
+
+<hr>
+<h2 id="使用说明"><a href="#使用说明" class="headerlink" title="使用说明"></a>使用说明</h2><ul>
+<li><strong>摩斯电码格式</strong>: 用空格分隔字符，用  分隔单词</li>
+<li><strong>示例</strong>:  解码为 </li>
+<li><strong>支持</strong>: 大小写字母、数字、常见标点符号</li>
+</ul>
+<hr>
+<p><em>一个人的宇宙 - 在画面与声音的联系中无限探索</em></p>
+
+      
+      
+        <div id="donate" class="donate">
+          <a id="github" href="" target="_blank" class="pos-f tr3" title="Github"></a>
+          <div id="DonateText" class="tr3">Donate</div>
+          <ul id="donateBox" class="list pos-f tr3">
+            <li id="PayPal"><a href="" target="_blank">PayPal</a></li>
+            <li id="BTC" data-footnote="Copy addres and show QRCode"><button id="BTCBn"  data-clipboard-target="#btc-key" alt="Copy to clipboard">Bitcoin</button></li>
+            <li id="AliPay">AliPay</li>
+            <li id="WeChat">WeChat</li>
+          </ul>
+          <div id="QRBox" class="pos-f left-100">
+            <div id="BTCQR" class="MainBox" style="background-image: url()"></div>
+            <div id="AliPayQR" class="MainBox" style="background-image: url(https://hexo-repo.pages.dev/images/alipay.jpg)"></div>
+            <div id="WeChatQR" class="MainBox" style="background-image: url(https://hexo-repo.pages.dev/images/wechat.jpg)"></div>
+          </div>
+          <!-- Bitcoin 账号 -->
+          <input id="btc-key" type="text" value="" readonly="readonly">
+        </div>
+      
+    </div>
+    <footer class="article-footer">
+      <ul class="article-meta">
+        <li>
+          <span class="label">Published Date:</span>
+          <a href="/about/index.html" class="article-date">
+  <time class="dt-published" datetime="2026-02-26T16:00:00.000Z" itemprop="datePublished">2026-02-27</time>
+</a>
+
+        </li>
+        
+        
+        <hr/>
+      </ul>
+    </footer>
+  </div>
+  
+    
+
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+      </div>
+      
+    <footer id="footer" class="post-footer footer">
+      
+      <hr/>
+      <div id="footerContent" class="footer-content">
+        <p>感谢你的阅读。如有想法，欢迎在下方留言。</p>
+
+
+      </div>
+    </footer>
+
+      
+
+
+
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/typing.js"></script>
+
+<!--[if lt IE 9]>
+<script src="https://cdn.jsdelivr.net/npm/html5shiv@3/dist/html5shiv.min.js"></script>
+<![endif]-->
+
+
+
+
+
+
+
+    </div>
+  </body>
+</html>
