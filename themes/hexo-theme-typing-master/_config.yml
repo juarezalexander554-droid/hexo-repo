@@ -1,11 +1,11 @@
-# Dark Mode
+﻿# Dark Mode
 dark: false
 
 # Header
 menu:
   首页: /
-  归档: /archives
-  关于: /about
+  乐队介绍: /archives
+  关于网页: /about
 
 # Your Feed Location
 #rss: /atom.xml
@@ -24,17 +24,14 @@ google_plus:
 fb_admins:
 fb_app_id:
 
-
 # Profile
 nickname: 一个人的宇宙
-description: 来自中国东海岸的后摇滚/器乐摇滚乐队，一直在画面与声音的联系中无限探索并不断尝试将两者进行转换，作品中多呈现对宇宙及空间的思考。
+description: 来自中国东海岸的后摇器乐摇滚乐队
+
 # Load fontawesome icons? Also see the links option
 icons: false
 
 # Footer area links
-# NOTICE) If you set "icons: false" link names will be clear text
-# If "icons: true" link names will interpreted as fontawesome icon names
-# NOTICE) Use the fontawesome icon names without the fa- prefix (http://fontawesome.io/cheatsheet/)
 links:
   作品: /archives/
 
@@ -42,7 +39,7 @@ links:
 nav: left
 
 # Info
-archive_footer_content: 一个人的宇宙 - 来自中国东海岸的后摇滚乐队，在画面与声音的联系中无限探索。
+archive_footer_content: 一个人的宇宙 - 来自中国东海岸的后摇滚乐队
 post_footer_content: 感谢你的阅读。如有想法，欢迎在下方留言。
 
 # Gitment
@@ -54,23 +51,21 @@ gitment:
     secret:
 
 # Utterances
-# NOTICE) make sure the app is installed on the repo before using this commit system
-# see https://utteranc.es/ for more
 utterances:
   enable: false
-  repo: # your repo in this format: 'username/reponame', note that there is no '.git' suffix
+  repo:
 
-# If you want to use valine,you should get the appId and appKey form https://leancloud.cn ,more setting please see https://valine.js.org
+# Valine
 valine:
-  enable: false # !!if you want use valine comment system,please set enable: true
-  appId:  #your leancloud appId
-  appKey:  #your leancloud appKey
-  guest_info: nick,mail,link #valine comment header info
-  placeholder: Just go go # valine comment input placeholder(like: Please leave your footprints )
-  avatar: mm # gravatar style https://valine.js.org/avatar
-  pageSize: 10 # comment list page size
-  verify: false # valine verify code (true/false)
-  notify: false # valine mail notify (true/false)
+  enable: false
+  appId:
+  appKey:
+  guest_info: nick,mail,link
+  placeholder: Just go go
+  avatar: mm
+  pageSize: 10
+  verify: false
+  notify: false
   lang: zh-cn
 
 # Donate
