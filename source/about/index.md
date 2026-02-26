@@ -3,16 +3,12 @@ title: About
 date: 2026-02-27
 ---
 
-# 关于网页
-
-## 摩斯电码解码工具
-
-在下方输入摩斯电码，点击解码查看对应的文字。
-
+<!-- 摩斯电码解码工具 -->
 <div id="morse-decoder" style="padding: 20px; background: #f5f5f5; border-radius: 8px; margin: 20px 0;">
+  <h2>摩斯电码解码工具</h2>
   <div style="margin-bottom: 15px;">
     <label for="morse-input" style="display: block; margin-bottom: 8px; font-weight: bold;">摩斯电码输入：</label>
-    <textarea id="morse-input" placeholder="输入摩斯电码，用空格分隔字符，用 / 分隔单词&#10;例如：.... . .-.. .-.. --- / .-- --- .-. .-.. -.." style="width: 100%; height: 100px; padding: 10px; border: 1px solid #ddd; border-radius: 4px; font-family: monospace;"></textarea>
+    <textarea id="morse-input" placeholder="输入摩斯电码，用空格分隔字符，用 / 分隔单词" style="width: 100%; height: 100px; padding: 10px; border: 1px solid #ddd; border-radius: 4px; font-family: monospace;"></textarea>
   </div>
   
   <div style="margin-bottom: 15px;">
@@ -35,10 +31,7 @@ const morseToChar = {
   '..-': 'U', '...-': 'V', '.--': 'W', '-..-': 'X', '-.--': 'Y',
   '--..': 'Z', '-----': '0', '.----': '1', '..---': '2', '...--': '3',
   '....-': '4', '.....': '5', '-....': '6', '--...': '7', '---..': '8',
-  '----.': '9', '.-.-.-': '.', '--..--': ',', '..--..': '?', '.----.': "'",
-  '-.-.-.': '!', '-..-.': '/', '-.--.': '(', '-.--.-': ')', '.-...': '&',
-  '---...': ':', '-.-.-': ';', '-...-': '=', '.-.-.': '+', '-....-': '-',
-  '..--.-': '_', '.-..-.': '"', '...-..-': '$', '.--.-.': '@'
+  '----.': '9'
 };
 
 function decodeMorse() {
@@ -61,23 +54,4 @@ function clearMorse() {
   document.getElementById('morse-input').value = '';
   document.getElementById('morse-output').textContent = '';
 }
-
-// 回车键解码
-document.getElementById('morse-input').addEventListener('keypress', function(e) {
-  if (e.key === 'Enter' && e.ctrlKey) {
-    decodeMorse();
-  }
-});
 </script>
-
----
-
-## 使用说明
-
-- **摩斯电码格式**: 用空格分隔字符，用  分隔单词
-- **示例**:  解码为 
-- **支持**: 大小写字母、数字、常见标点符号
-
----
-
-*一个人的宇宙 - 在画面与声音的联系中无限探索*
