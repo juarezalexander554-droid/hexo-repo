@@ -4,7 +4,7 @@ dark: false
 # Header
 menu:
   首页: /
-  乐队介绍: /archives
+  乐队介绍: /band
   关于网页: /about
 
 # Your Feed Location
@@ -73,3 +73,4 @@ donate:
   enable: true
   AliPayQR: https://hexo-repo.pages.dev/images/alipay.jpg
   WeChatQR: https://hexo-repo.pages.dev/images/wechat.jpg
+
