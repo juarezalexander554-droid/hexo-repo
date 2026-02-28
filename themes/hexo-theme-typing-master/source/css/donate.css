@@ -107,9 +107,11 @@
 }
 #donateBox #AliPay {
   background-image: url(../images/alipay.svg);
+  background-size: 24px;
 }
 #donateBox #WeChat {
   background-image: url(../images/wechat.svg);
+  background-size: 28px;
 }
 #QRBox {
   top: 0;
