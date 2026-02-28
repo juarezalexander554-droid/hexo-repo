@@ -6,7 +6,7 @@ tags: music
 
 ## 🎵 在线收听
 
-**[百度网盘下载](https://pan.baidu.com/s/1HfLgpjA5adutZ8JnYbrFZg?pwd=pqxu)** | **[网易云音乐](https://music.163.com/search/get?s=一个人的宇宙)**
+**[百度网盘下载](https://pan.baidu.com/s/1HfLgpjA5adutZ8JnYbrFZg?pwd=pqxu)** | **[网易云音乐](https://music.163.com/#/artist?id=1160013)**
 
 ---
 
