@@ -68,7 +68,7 @@
   border-left: 1px solid #ddd;
   background: no-repeat center center;
   background-color: rgba(204, 217, 220,0.1);
-  background-size: 30px;
+  background-size: 50px;
   transition: all .3s;
   cursor: pointer;
   overflow: visible;
