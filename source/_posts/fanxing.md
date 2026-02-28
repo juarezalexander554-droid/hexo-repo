@@ -6,7 +6,7 @@ tags: music
 
 ## 🎵 在线收听
 
-**[百度网盘下载](https://pan.baidu.com/s/1HfLgpjA5adutZ8JnYbrFZg?pwd=pqxu)** | **[网易云音乐](https://music.163.com/#/artist?id=1160013)**
+**[百度网盘下载](https://pan.baidu.com/s/1HfLgpjA5adutZ8JnYbrFZg?pwd=pqxu)** | **[网易云音乐](https://music.163.com/#/album?id=348347802)**
 
 ---
 
@@ -97,5 +97,5 @@ tags: music
 ## 🔗 相关链接
 
 - **在线收听**：[百度网盘](https://pan.baidu.com/s/1HfLgpjA5adutZ8JnYbrFZg?pwd=pqxu)
-- **网易云音乐**：[一个人的宇宙](https://music.163.com/#/artist?id=1160013)
+- **网易云音乐**：[繁星·旷野·暹罗猫](https://music.163.com/#/album?id=348347802)
 - **官方网站**：https://一个人的宇宙.top
