@@ -71,10 +71,11 @@
   background-size: 50px;
   transition: all .3s;
   cursor: pointer;
-  overflow: visible;
+  overflow: hidden;
   -webkit-filter: grayscale(1);
   filter: grayscale(1);
   opacity: 0.6;
+  position: relative;
 }
 #donateBox li:hover {
   background-color: rgba(204, 217, 220,0.3);
