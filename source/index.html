@@ -73,19 +73,20 @@ layout: false
       display: grid; place-items: center;
     }
     .layout {
-      width: min(1180px, 96vw); display: grid; grid-template-columns: 1fr minmax(360px, 510px); gap: clamp(28px, 5vw, 72px); align-items: center;
+      width: min(980px, 94vw); display: grid; grid-template-columns: 1fr; align-items: center; text-align: center;
     }
 
     .copy {
       text-shadow: 0 2px 18px rgba(0,0,0,.45);
-      transform: translateY(1vh);
+      transform: translateY(1vh); margin: 0 auto;
     }
     .eyebrow {
       display: inline-flex; gap: 11px; align-items: center; margin-bottom: 22px;
       font: 12px/1.2 ui-monospace, SFMono-Regular, Consolas, monospace;
       letter-spacing: .28em; color: rgba(255,246,210,.78); text-transform: uppercase;
     }
-    .eyebrow::before { content: ""; width: 56px; height: 1px; background: rgba(255,246,210,.72); box-shadow: 0 0 20px rgba(255,246,210,.4); }
+    .eyebrow { justify-content: center; }
+    .eyebrow::before, .eyebrow::after { content: ""; width: 56px; height: 1px; background: rgba(255,246,210,.72); box-shadow: 0 0 20px rgba(255,246,210,.4); }
     h1 {
       margin: 0; font-size: clamp(54px, 8vw, 122px); line-height: .96; letter-spacing: .13em; font-weight: 500;
       color: rgba(255,249,227,.94);
@@ -96,7 +97,7 @@ layout: false
       max-width: 620px; margin: 28px 0 0; font-size: 15px; line-height: 2.05; letter-spacing: .08em;
       color: rgba(255,252,235,.74);
     }
-    .actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 34px; }
+    .actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 34px; justify-content: center; }
     .btn {
       display: inline-flex; align-items: center; justify-content: center; min-width: 122px; padding: 12px 18px;
       border: 1px solid rgba(255,250,230,.55); border-radius: 999px; color: rgba(255,250,230,.92); text-decoration: none;
@@ -106,9 +107,7 @@ layout: false
     }
     .btn:hover { transform: translateY(-3px); background: rgba(255,255,255,.16); box-shadow: 0 16px 50px rgba(255,246,210,.20); }
 
-    .visual {
-      position: relative; min-height: min(78vh, 690px); display: grid; place-items: center;
-    }
+    .visual { display: none; }
     .moon-disc {
       position: absolute; width: min(460px, 82vw); aspect-ratio: 1/1; border-radius: 50%;
       background: radial-gradient(circle at 48% 40%, rgba(255,248,218,.36), rgba(178,222,194,.18) 44%, rgba(30,91,101,.05) 68%, transparent 72%);
@@ -182,10 +181,10 @@ layout: false
   <main class="stage">
     <section class="layout" aria-label="一个人的宇宙官网首页">
       <div class="copy">
-        <div class="eyebrow">SEA · SIAMESE CAT · ROSE · SPACE</div>
+        <div class="eyebrow">SEA · ROSE PETALS · ONE PERSON'S UNIVERSE</div>
         <h1>一个人的<br>宇宙</h1>
         <p class="subtitle">来自中国东海岸的后摇器乐摇滚乐队</p>
-        <p class="manifesto">浅青色海面，旧胶片颗粒，暹罗猫像从梦里醒来。玫瑰和星尘漂在潮声上，这是后摇、孤独、浪漫与宇宙感混在一起的入口。</p>
+        <p class="manifesto">浅青色海面，旧胶片颗粒，玫瑰花瓣慢慢飘过。这里不需要多余装饰，只留下潮声、宇宙感、后摇和一个人的浪漫。</p>
         <nav class="actions" aria-label="站点导航">
           <a class="btn" href="/archives/">作品</a>
           <a class="btn" href="/band/">乐队介绍</a>
@@ -193,18 +192,8 @@ layout: false
           <a class="btn" href="/3b285438-e417-4308-ae98-dcaf9c423a9d/">隐秘页</a>
         </nav>
       </div>
-
-      <div class="visual" aria-hidden="true">
-        <div class="moon-disc"></div>
-        <figure class="photo-card">
-          <img class="cat-photo" src="/images/hero-assets/siamese-cat.jpg" alt="" />
-          <img class="rose-photo" src="/images/hero-assets/rose-photo.jpg" alt="" />
-          <figcaption class="caption">MORSE · ROSE · CAT · OCEAN · ONE PERSON'S UNIVERSE</figcaption>
-        </figure>
-      </div>
     </section>
   </main>
-  <div class="source-note">sea reference / public-domain cat / rose asset</div>
 
   <script>
     const DPR = Math.min(devicePixelRatio || 1, 2);
