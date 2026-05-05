@@ -273,27 +273,264 @@
 </noscript>
 
   <style>
-html, body { background: #071418 !important; background-image: url('/images/hero-assets/sea-reference.jpg') !important; background-size: cover !important; background-position: center !important; background-attachment: fixed !important; }
-.header, header { background: rgba(7,20,24,.92) !important; backdrop-filter: blur(18px) saturate(1.4) !important; border-bottom: 1px solid rgba(168,217,189,.2) !important; }
-.site-title, .site-name { color: rgba(243,240,223,.95) !important; }
-.menu-item a, header nav a { color: rgba(210,235,220,.82) !important; }
-.menu-item a:hover, header nav a:hover { color: rgba(168,217,189,1) !important; text-shadow: 0 0 18px rgba(168,217,189,.55) !important; }
-.content-wrap { background: rgba(7,20,24,.72) !important; backdrop-filter: blur(14px) !important; border-radius: 18px !important; }
-.post-block { background: rgba(13,45,58,.6) !important; backdrop-filter: blur(10px) !important; border: 1px solid rgba(168,217,189,.14) !important; border-radius: 16px !important; }
-.posts-expand .post-title a { color: rgba(243,240,223,.95) !important; }
-.posts-expand .post-meta { color: rgba(168,217,189,.72) !important; }
-.footer { background: rgba(7,20,24,.9) !important; border-top: 1px solid rgba(168,217,189,.14) !important; color: rgba(168,217,189,.72) !important; }
-a { color: rgba(168,217,189,.9) !important; }
-a:hover { color: rgba(255,197,107,1) !important; }
-blockquote { border-left: 3px solid rgba(169,61,86,.72) !important; background: rgba(169,61,86,.1) !important; color: rgba(243,240,223,.88) !important; }
-::-webkit-scrollbar-track { background: rgba(7,20,24,.6) !important; }
-::-webkit-scrollbar-thumb { background: rgba(168,217,189,.38) !important; }
-.posts-collapse .post-item:hover { background: rgba(168,217,189,.06) !important; }
-.posts-collapse .post-header::before { background: rgba(168,217,189,.5) !important; }
-.page-title { color: rgba(243,240,223,.92) !important; }
-pre, code { background: rgba(7,20,24,.72) !important; border: 1px solid rgba(168,217,189,.16) !important; color: rgba(210,235,220,.95) !important; }
-.btn { border: 1px solid rgba(168,217,189,.5) !important; color: rgba(210,235,220,.92) !important; background: rgba(13,45,58,.55) !important; border-radius: 999px !important; }
-.btn:hover { border-color: rgba(255,197,107,.8) !important; color: rgba(255,197,107,1) !important; }
-</style>
+/* ── World-Class Cosmic Sea Theme ── */
+html, body {
+  background: linear-gradient(160deg, #050d14 0%, #071820 25%, #0a2030 50%, #071418 75%, #050d14 100%) !important;
+  background-attachment: fixed !important;
+  min-height: 100vh !important;
+}
+/* Sea image overlay */
+html::before {
+  content: ''; position: fixed; inset: 0; z-index: 0;
+  background: url('/images/hero-assets/sea-reference.jpg') center / cover no-repeat fixed;
+  opacity: .38; mix-blend-mode: screen; pointer-events: none;
+  filter: saturate(.75) contrast(1.08) brightness(.92);
+}
+/* Subtle noise grain */
+html::after {
+  content: ''; position: fixed; inset: 0; z-index: 1; pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.04'/%3E%3C/svg%3E");
+  opacity: .45; mix-blend-mode: overlay;
+}
+body { position: relative; z-index: 2; background: transparent !important; }
+
+/* ── Header ── */
+.header, header {
+  background: rgba(5, 13, 20, .88) !important;
+  backdrop-filter: blur(24px) saturate(1.5) !important;
+  border-bottom: 1px solid rgba(168, 217, 189, .18) !important;
+  box-shadow: 0 4px 40px rgba(0,0,0,.5), 0 1px 0 rgba(168,217,189,.08) inset !important;
+}
+.site-title, .site-name {
+  font-family: "Noto Serif SC", "Songti SC", serif !important;
+  color: rgba(243, 240, 223, .97) !important;
+  letter-spacing: .18em !important;
+  text-shadow: 0 0 30px rgba(168,217,189,.35), 0 2px 8px rgba(0,0,0,.6) !important;
+  font-size: 1.15em !important;
+}
+.menu-item a, header nav a {
+  color: rgba(168, 217, 189, .75) !important;
+  letter-spacing: .1em !important;
+  font-family: ui-monospace, SFMono-Regular, Consolas, monospace !important;
+  font-size: .82em !important;
+  transition: color .3s ease, text-shadow .3s ease !important;
+}
+.menu-item a:hover, header nav a:hover {
+  color: rgba(200, 255, 220, 1) !important;
+  text-shadow: 0 0 22px rgba(168, 217, 189, .8), 0 0 40px rgba(168,217,189,.3) !important;
+}
+
+/* ── Content Wrap ── */
+.content-wrap {
+  background: rgba(5, 13, 20, .55) !important;
+  backdrop-filter: blur(20px) saturate(1.3) !important;
+  border-radius: 24px !important;
+  border: 1px solid rgba(168, 217, 189, .1) !important;
+  box-shadow: 0 8px 64px rgba(0,0,0,.4), 0 0 0 1px rgba(255,255,255,.03) inset !important;
+  margin: 32px auto !important;
+  max-width: 860px !important;
+}
+
+/* ── Post Block Cards ── */
+.post-block, .posts-expand .post {
+  background: rgba(10, 32, 48, .5) !important;
+  backdrop-filter: blur(16px) !important;
+  border: 1px solid rgba(168, 217, 189, .12) !important;
+  border-radius: 20px !important;
+  box-shadow: 0 4px 32px rgba(0,0,0,.3), 0 0 40px rgba(168,217,189,.04) !important;
+  margin: 28px !important;
+  padding: 36px 40px !important;
+  transition: border-color .35s ease, box-shadow .35s ease, transform .35s ease !important;
+}
+.post-block:hover, .posts-expand .post:hover {
+  border-color: rgba(168, 217, 189, .32) !important;
+  box-shadow: 0 8px 48px rgba(0,0,0,.4), 0 0 60px rgba(168,217,189,.1) !important;
+  transform: translateY(-2px) !important;
+}
+
+/* ── Post Title ── */
+.posts-expand .post-title a, .posts-expand .post-title {
+  font-family: "Noto Serif SC", serif !important;
+  color: rgba(243, 240, 223, .97) !important;
+  font-size: 1.45em !important;
+  font-weight: 400 !important;
+  letter-spacing: .1em !important;
+  text-shadow: 0 2px 12px rgba(0,0,0,.5) !important;
+  transition: color .25s ease !important;
+}
+.posts-expand .post-title a:hover {
+  color: rgba(168, 255, 200, 1) !important;
+  text-shadow: 0 0 20px rgba(168,255,200,.5) !important;
+}
+
+/* ── Post Meta ── */
+.posts-expand .post-meta {
+  color: rgba(168, 217, 189, .6) !important;
+  font-family: ui-monospace, SFMono-Regular, Consolas, monospace !important;
+  font-size: .75em !important;
+  letter-spacing: .15em !important;
+  text-transform: uppercase !important;
+  margin-top: 10px !important;
+}
+
+/* ── Archive Timeline ── */
+.posts-collapse { margin-left: 2px !important; }
+.posts-collapse .post-header { padding-left: 28px !important; position: relative !important; }
+.posts-collapse .post-header::before {
+  content: ''; position: absolute !important;
+  left: 6px !important; top: 18px !important;
+  width: 10px !important; height: 10px !important;
+  background: rgba(168, 217, 189, .5) !important;
+  border: 2px solid rgba(168, 217, 189, .3) !important;
+  border-radius: 50% !important;
+  box-shadow: 0 0 14px rgba(168, 217, 189, .5), 0 0 28px rgba(168,217,189,.2) !important;
+  z-index: 2 !important;
+  transition: all .3s ease !important;
+}
+.posts-collapse .post-item:hover .post-header::before {
+  background: rgba(168, 255, 200, .9) !important;
+  box-shadow: 0 0 20px rgba(168,255,200,.8), 0 0 40px rgba(168,255,200,.3) !important;
+}
+.posts-collapse .post-items::before {
+  content: ''; position: absolute !important;
+  left: 10px !important; top: 0; bottom: 0 !important;
+  width: 1px !important;
+  background: linear-gradient(to bottom, rgba(168,217,189,.5), rgba(168,217,189,.05)) !important;
+  box-shadow: 0 0 8px rgba(168,217,189,.2) !important;
+}
+.posts-collapse .post-item {
+  padding: 14px 0 !important;
+  border-radius: 14px !important;
+  transition: background .3s ease !important;
+  margin-bottom: 4px !important;
+}
+.posts-collapse .post-item:hover { background: rgba(168, 217, 189, .05) !important; }
+.posts-collapse .post-title a {
+  font-family: "Noto Serif SC", serif !important;
+  color: rgba(243, 240, 223, .92) !important;
+  font-size: 1.15em !important;
+  letter-spacing: .08em !important;
+  transition: color .25s ease !important;
+}
+.posts-collapse .post-title a:hover { color: rgba(168, 255, 200, 1) !important; }
+
+/* ── Page Title ── */
+.page-title {
+  font-family: "Noto Serif SC", serif !important;
+  color: rgba(243, 240, 223, .97) !important;
+  text-align: center !important;
+  font-size: clamp(28px, 4vw, 48px) !important;
+  letter-spacing: .25em !important;
+  text-shadow: 0 0 40px rgba(168,217,189,.3), 0 2px 8px rgba(0,0,0,.5) !important;
+  margin-bottom: 48px !important;
+  padding-top: 20px !important;
+}
+
+/* ── Footer ── */
+.footer {
+  background: rgba(5, 13, 20, .92) !important;
+  border-top: 1px solid rgba(168, 217, 189, .12) !important;
+  color: rgba(168, 217, 189, .55) !important;
+  backdrop-filter: blur(12px) !important;
+  font-family: ui-monospace, monospace !important;
+  font-size: .78em !important;
+  letter-spacing: .1em !important;
+}
+.footer a { color: rgba(168, 217, 189, .6) !important; transition: color .25s ease !important; }
+.footer a:hover { color: rgba(200, 255, 220, 1) !important; text-shadow: 0 0 14px rgba(168,255,200,.6) !important; }
+
+/* ── Links ── */
+a { color: rgba(168, 217, 189, .85) !important; transition: color .25s ease !important; border-bottom: none !important; }
+a:hover { color: rgba(200, 255, 220, 1) !important; text-shadow: 0 0 16px rgba(200,255,220,.5) !important; }
+
+/* ── Blockquote ── */
+blockquote {
+  border-left: 2px solid rgba(169, 61, 86, .8) !important;
+  background: rgba(169, 61, 86, .08) !important;
+  color: rgba(243, 240, 223, .88) !important;
+  border-radius: 0 12px 12px 0 !important;
+  padding: 16px 24px !important;
+  margin: 24px 0 !important;
+  backdrop-filter: blur(8px) !important;
+  font-style: normal !important;
+}
+
+/* ── Code ── */
+pre, code {
+  background: rgba(5, 13, 20, .8) !important;
+  border: 1px solid rgba(168, 217, 189, .15) !important;
+  color: rgba(168, 255, 200, .95) !important;
+  border-radius: 8px !important;
+  font-family: ui-monospace, SFMono-Regular, Consolas, monospace !important;
+  font-size: .85em !important;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: rgba(5, 13, 20, .4) !important; }
+::-webkit-scrollbar-thumb { background: rgba(168, 217, 189, .35) !important; border-radius: 999px !important; }
+::-webkit-scrollbar-thumb:hover { background: rgba(168, 217, 189, .6) !important; }
+
+/* ── Selection ── */
+::selection { background: rgba(169, 61, 86, .5) !important; color: rgba(255, 245, 235, 1) !important; }
+
+/* ── Buttons ── */
+.btn {
+  border: 1px solid rgba(168, 217, 189, .45) !important;
+  color: rgba(210, 235, 220, .9) !important;
+  background: rgba(10, 32, 48, .5) !important;
+  border-radius: 999px !important;
+  font-family: ui-monospace, monospace !important;
+  font-size: .8em !important;
+  letter-spacing: .14em !important;
+  padding: 10px 28px !important;
+  backdrop-filter: blur(10px) !important;
+  transition: all .3s ease !important;
+}
+.btn:hover {
+  border-color: rgba(200, 255, 220, .8) !important;
+  color: rgba(200, 255, 220, 1) !important;
+  background: rgba(168, 217, 189, .12) !important;
+  box-shadow: 0 0 28px rgba(168,255,200,.25), 0 4px 16px rgba(0,0,0,.3) !important;
+  transform: translateY(-2px) !important;
+}
+
+/* ── Tag Pills ── */
+.post-tags a, .tag-cloud a {
+  border: 1px solid rgba(169, 61, 86, .5) !important;
+  color: rgba(200, 180, 160, .85) !important;
+  background: rgba(169, 61, 86, .1) !important;
+  border-radius: 999px !important;
+  padding: 4px 14px !important;
+  font-family: ui-monospace, monospace !important;
+  font-size: .72em !important;
+  letter-spacing: .1em !important;
+  transition: all .25s ease !important;
+}
+.post-tags a:hover, .tag-cloud a:hover {
+  background: rgba(169, 61, 86, .25) !important;
+  border-color: rgba(200, 255, 220, .7) !important;
+  color: rgba(200, 255, 220, 1) !important;
+}
+
+/* ── Animations ── */
+@keyframes cosmicPulse {
+  0%, 100% { opacity: .6; }
+  50% { opacity: 1; }
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.post-block { animation: fadeInUp .6s ease both; }
+.posts-collapse .post-item { animation: fadeInUp .5s ease both; }
+
+/* ── Focus States ── */
+:focus-visible {
+  outline: 2px solid rgba(168, 217, 189, .6) !important;
+  outline-offset: 3px !important;
+  border-radius: 4px !important;
+}
+  </style>
 </body>
 </html>
