@@ -102,3 +102,7 @@ theme: next
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: ''
+
+# NexT Custom File Paths — 内页宇宙海风样式
+custom_file_path:
+  style: source/_data/styles.styl
