@@ -105,4 +105,5 @@ deploy:
 
 # NexT Custom File Paths — 内页宇宙海风样式
 custom_file_path:
-  style: source/_data/styles.styl
+  style: _data/styles.styl
+  bodyEnd: _data/body-end.njk

@@ -4,7 +4,7 @@
 // ==============================
 
 // ── 全局背景 ──
-body {
+html body {
   background:
     linear-gradient(160deg, rgba(7,20,24,.82), rgba(13,45,58,.72)),
     url('/images/hero-assets/sea-reference.jpg') center / cover no-repeat fixed !important;
