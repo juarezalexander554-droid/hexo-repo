@@ -337,6 +337,108 @@ tr:hover td { background: rgba(168, 217, 189, .06) !important; }
   color: rgba(255, 255, 255, .75) !important;
 }
 
+
+
+/* ══════════════════════════════════════
+   灭白底 — 所有白/浅色背景全清
+══════════════════════════════════════ */
+
+/* 强制覆盖NexT硬编码白色背景 */
+.header, header, .headband,
+.main, .main-inner, .column,
+.site-head, .site-body,
+.sidebar, .sidebar-inner, .sidebar-toggle,
+.nav,
+.menu, .menu-item,
+.site-state, .site-state-item,
+.post-button, .btn,
+.pagination, .pagination-prev, .pagination-next, .page-number,
+.tags, .tag, .tag-cloud,
+.categories, .category,
+.back-to-top,
+.site-author, .site-author-name,
+.footer, .footer-inner,
+.powered-by,
+.noscript-warning,
+.site-info,
+#_SCHEME_Gemini,
+[class*="Gemini"],
+[class*="sidebar"],
+[class*="menu"],
+[class*="site-state"],
+[class*="post-button"] {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+}
+
+/* 具体灭白块 */
+.headband { display: none !important; }
+.site-state-item,
+.site-state-item-count,
+.site-state-item-name,
+.collection-title,
+.collection-year-count {
+  background: rgba(10, 32, 48, .6) !important;
+  border-radius: 8px !important;
+  padding: 4px 12px !important;
+  color: rgba(255, 255, 255, .92) !important;
+}
+
+/* 所有按钮白底黑字全清 */
+.post-button,
+.btn,
+button,
+.pagination a,
+.page-number,
+.tags a,
+.tag a,
+.categories a,
+.back-to-top,
+.feedback-button {
+  background: rgba(10, 32, 48, .7) !important;
+  background-color: rgba(10, 32, 48, .7) !important;
+  color: rgba(255, 255, 255, .92) !important;
+  border: 1px solid rgba(168, 217, 189, .3) !important;
+  border-radius: 999px !important;
+}
+.post-button:hover,
+.btn:hover,
+button:hover,
+.tags a:hover,
+.tag a:hover,
+.categories a:hover,
+.back-to-top:hover {
+  background: rgba(10, 32, 48, .9) !important;
+  border-color: rgba(168, 217, 189, .6) !important;
+  color: rgba(255, 255, 255, 1) !important;
+}
+
+/* 导航白底 */
+.menu .menu-item a,
+.menu .menu-item,
+.site-nav .menu-item a {
+  background: transparent !important;
+  color: rgba(255, 255, 255, .82) !important;
+}
+.menu .menu-item a:hover {
+  background: rgba(10, 32, 48, .5) !important;
+  color: rgba(255, 255, 255, 1) !important;
+}
+
+/* 侧边栏透明 */
+.sidebar { background: transparent !important; }
+.sidebar-inner { background: rgba(5, 13, 20, .5) !important; backdrop-filter: blur(12px) !important; }
+
+/* 底部透明 */
+.footer { background: rgba(5, 13, 20, .92) !important; }
+.footer-inner { background: transparent !important; }
+
+/* 消除NexT Gemini scheme白色背景 */
+.use-motion .main { background: transparent !important; }
+.column { background: transparent !important; }
+.main-inner { background: transparent !important; }
+
   </style>
 </body>
 </html>
