@@ -439,6 +439,42 @@ button:hover,
 .column { background: transparent !important; }
 .main-inner { background: transparent !important; }
 
+
+
+/* ══════════════════════════════════════
+   强制覆盖所有灰色文字
+══════════════════════════════════════ */
+
+/*  blanket: 所有文字默认白色  */
+* { color: rgba(255, 255, 255, .93) !important; }
+
+/* 链接保持薄荷绿 */
+a { color: rgba(168, 217, 189, .9) !important; }
+a:hover { color: rgba(255, 255, 255, 1) !important; }
+
+/* 按钮 */
+.btn, button, .post-button {
+  color: rgba(255, 255, 255, .92) !important;
+}
+
+/* 页脚弱化 */
+.footer { color: rgba(255, 255, 255, .75) !important; }
+.footer a { color: rgba(255, 255, 255, .75) !important; }
+
+/* 元数据稍微淡一点 */
+.post-meta, .site-state-item-name {
+  color: rgba(255, 255, 255, .75) !important;
+}
+
+/* 引用块 */
+blockquote { color: rgba(255, 255, 255, .92) !important; }
+
+/* 代码 */
+code, pre { color: rgba(168, 255, 200, .95) !important; }
+
+/* 选中文字 */
+::selection { color: rgba(255, 255, 255, 1) !important; }
+
   </style>
 </body>
 </html>
