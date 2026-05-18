@@ -1,0 +1,235 @@
+---
+layout: false
+---
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>一个人的宇宙</title>
+  <meta name="description" content="来自中国东海岸的后摇器乐摇滚乐队" />
+  <style>
+    :root {
+      --mint: #a8d9bd;
+      --sea: #4c8f8e;
+      --deep: #071418;
+      --ink: #0c171c;
+      --paper: #f3f0df;
+      --rose: #a93d56;
+      --amber: #e7c37a;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { margin: 0; min-height: 100%; overflow: hidden; }
+    body {
+      font-family: "Noto Serif SC", "Songti SC", "Microsoft YaHei", serif;
+      color: rgba(255, 250, 231, .92);
+      background: #87c8b7;
+    }
+
+    .film-bg {
+      position: fixed; inset: 0; z-index: 0;
+      background:
+        linear-gradient(180deg, rgba(177,224,196,.18), rgba(13,74,83,.30)),
+        url('/images/hero-assets/sea-reference.jpg') center / cover no-repeat;
+      filter: saturate(.92) contrast(.88) brightness(1.02);
+      transform: scale(1.025);
+    }
+    .film-bg::after {
+      content: ""; position: absolute; inset: 0;
+      background:
+        radial-gradient(circle at 50% 34%, rgba(255,249,218,.34), transparent 28%),
+        linear-gradient(90deg, rgba(255,255,255,.06), transparent 12%, transparent 88%, rgba(0,0,0,.12)),
+        linear-gradient(180deg, rgba(229,255,217,.08), rgba(2,12,17,.44));
+      mix-blend-mode: soft-light;
+    }
+
+    .grain, .vignette, .aurora, canvas {
+      position: fixed; inset: 0; pointer-events: none;
+    }
+    .grain { z-index: 10; opacity: .23; mix-blend-mode: overlay;
+      background-image:
+        repeating-radial-gradient(circle at 10% 20%, rgba(255,255,255,.13) 0 1px, transparent 1px 3px),
+        repeating-linear-gradient(97deg, rgba(0,0,0,.07) 0 1px, transparent 1px 5px);
+      animation: grain 7s steps(6) infinite;
+    }
+    @keyframes grain { 50% { transform: translate(-1.5%, .8%); } }
+    .vignette { z-index: 9; box-shadow: inset 0 0 130px rgba(0,0,0,.42), inset 0 0 260px rgba(4,18,22,.32); }
+    .aurora { z-index: 2; opacity: .55; filter: blur(35px); mix-blend-mode: screen;
+      background:
+        radial-gradient(circle at 68% 28%, rgba(255,238,164,.28), transparent 22%),
+        radial-gradient(circle at 30% 58%, rgba(190,237,221,.20), transparent 31%),
+        linear-gradient(120deg, transparent, rgba(154,205,178,.18), transparent 68%);
+      animation: breathe 12s ease-in-out infinite;
+    }
+    @keyframes breathe { 50% { opacity: .85; transform: translateY(-12px) scale(1.03); } }
+
+    #stars { z-index: 3; mix-blend-mode: screen; }
+    #petals { z-index: 6; }
+    #dust { z-index: 8; mix-blend-mode: screen; }
+
+    .stage {
+      position: relative; z-index: 7; min-height: 100vh; padding: clamp(28px, 6vh, 72px) clamp(22px, 6vw, 88px);
+      display: grid; place-items: center;
+    }
+    .layout {
+      width: min(1180px, 96vw); display: grid; grid-template-columns: 1fr minmax(360px, 510px); gap: clamp(28px, 5vw, 72px); align-items: center;
+    }
+
+    .copy {
+      text-shadow: 0 2px 18px rgba(0,0,0,.45);
+      transform: translateY(1vh);
+    }
+    .eyebrow {
+      display: inline-flex; gap: 11px; align-items: center; margin-bottom: 22px;
+      font: 12px/1.2 ui-monospace, SFMono-Regular, Consolas, monospace;
+      letter-spacing: .28em; color: rgba(255,246,210,.78); text-transform: uppercase;
+    }
+    .eyebrow::before { content: ""; width: 56px; height: 1px; background: rgba(255,246,210,.72); box-shadow: 0 0 20px rgba(255,246,210,.4); }
+    h1 {
+      margin: 0; font-size: clamp(54px, 8vw, 122px); line-height: .96; letter-spacing: .13em; font-weight: 500;
+      color: rgba(255,249,227,.94);
+      text-shadow: 0 0 2px rgba(255,255,255,.9), 0 16px 48px rgba(6,35,45,.55);
+    }
+    .subtitle { margin: 24px 0 0; font-size: clamp(17px, 2vw, 26px); letter-spacing: .18em; color: rgba(255,251,232,.82); }
+    .manifesto {
+      max-width: 620px; margin: 28px 0 0; font-size: 15px; line-height: 2.05; letter-spacing: .08em;
+      color: rgba(255,252,235,.74);
+    }
+    .actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 34px; }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; min-width: 122px; padding: 12px 18px;
+      border: 1px solid rgba(255,250,230,.55); border-radius: 999px; color: rgba(255,250,230,.92); text-decoration: none;
+      background: rgba(9,37,43,.20); backdrop-filter: blur(9px); letter-spacing: .16em; font-size: 14px;
+      box-shadow: 0 12px 40px rgba(0,0,0,.14), inset 0 0 28px rgba(255,255,255,.05);
+      transition: transform .28s ease, background .28s ease, box-shadow .28s ease;
+    }
+    .btn:hover { transform: translateY(-3px); background: rgba(255,255,255,.16); box-shadow: 0 16px 50px rgba(255,246,210,.20); }
+
+    .visual {
+      position: relative; min-height: min(78vh, 690px); display: grid; place-items: center;
+    }
+    .moon-disc {
+      position: absolute; width: min(460px, 82vw); aspect-ratio: 1/1; border-radius: 50%;
+      background: radial-gradient(circle at 48% 40%, rgba(255,248,218,.36), rgba(178,222,194,.18) 44%, rgba(30,91,101,.05) 68%, transparent 72%);
+      filter: blur(1px); opacity: .82; animation: moonFloat 9s ease-in-out infinite;
+    }
+    @keyframes moonFloat { 50% { transform: translateY(-10px) scale(1.035); opacity: .95; } }
+
+    .photo-card {
+      position: relative; width: min(430px, 82vw); height: min(580px, 86vh); border-radius: 32px; overflow: hidden;
+      background: rgba(255,255,255,.12); box-shadow: 0 32px 95px rgba(0,0,0,.34), 0 0 0 1px rgba(255,255,255,.18) inset;
+      transform: rotate(1.2deg); animation: cardFloat 8s ease-in-out infinite;
+    }
+    @keyframes cardFloat { 50% { transform: rotate(-.8deg) translateY(-13px); } }
+    .cat-photo {
+      position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 48% 42%;
+      filter: saturate(.55) contrast(.85) brightness(1.06) sepia(.16);
+      transform: scale(1.04);
+    }
+    .photo-card::before {
+      content: ""; position: absolute; inset: 0; z-index: 2;
+      background:
+        linear-gradient(180deg, rgba(174,226,198,.18), rgba(17,58,64,.64)),
+        radial-gradient(circle at 54% 38%, transparent 0 30%, rgba(214,245,216,.15) 45%, rgba(0,0,0,.28) 100%);
+      mix-blend-mode: multiply;
+    }
+    .photo-card::after {
+      content: ""; position: absolute; inset: 18px; z-index: 3; border-radius: 24px;
+      border: 1px solid rgba(255,247,218,.36); box-shadow: inset 0 0 80px rgba(255,255,255,.08);
+    }
+
+    .rose-photo {
+      position: absolute; z-index: 4; right: -18px; bottom: 42px; width: 178px; height: 178px; border-radius: 50%; object-fit: cover;
+      filter: saturate(.75) contrast(.92) brightness(.94) sepia(.08); opacity: .88;
+      box-shadow: 0 18px 55px rgba(46,17,23,.34), 0 0 0 1px rgba(255,255,255,.24) inset;
+      animation: roseFloat 7s ease-in-out infinite reverse;
+      mix-blend-mode: screen;
+    }
+    @keyframes roseFloat { 50% { transform: translate(-10px, -12px) rotate(-4deg); } }
+
+    .caption {
+      position: absolute; z-index: 5; left: 22px; bottom: 24px; max-width: 280px;
+      font: 12px/1.7 ui-monospace, SFMono-Regular, Consolas, monospace; letter-spacing: .18em; color: rgba(255,250,226,.72);
+      text-shadow: 0 2px 14px rgba(0,0,0,.5);
+    }
+
+    .source-note {
+      position: fixed; right: 18px; bottom: 14px; z-index: 12; font: 11px/1.6 ui-monospace, Consolas, monospace;
+      color: rgba(255,250,230,.44); text-align: right; pointer-events: none;
+    }
+
+    @media (max-width: 860px) {
+      html, body { overflow-y: auto; }
+      .layout { grid-template-columns: 1fr; text-align: center; }
+      .eyebrow { justify-content: center; }
+      .eyebrow::before { display: none; }
+      .actions { justify-content: center; }
+      .visual { min-height: 520px; order: -1; }
+      .source-note { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="film-bg"></div>
+  <div class="aurora"></div>
+  <canvas id="stars"></canvas>
+  <canvas id="petals"></canvas>
+  <canvas id="dust"></canvas>
+  <div class="vignette"></div>
+  <div class="grain"></div>
+
+  <main class="stage">
+    <section class="layout" aria-label="一个人的宇宙官网首页">
+      <div class="copy">
+        <div class="eyebrow">SEA · SIAMESE CAT · ROSE · SPACE</div>
+        <h1>一个人的<br>宇宙</h1>
+        <p class="subtitle">来自中国东海岸的后摇器乐摇滚乐队</p>
+        <p class="manifesto">浅青色海面，旧胶片颗粒，暹罗猫像从梦里醒来。玫瑰和星尘漂在潮声上，这是后摇、孤独、浪漫与宇宙感混在一起的入口。</p>
+        <nav class="actions" aria-label="站点导航">
+          <a class="btn" href="/archives/">作品</a>
+          <a class="btn" href="/band/">乐队介绍</a>
+          <a class="btn" href="/about/">关于网页</a>
+          <a class="btn" href="/3b285438-e417-4308-ae98-dcaf9c423a9d/">隐秘页</a>
+        </nav>
+      </div>
+
+      <div class="visual" aria-hidden="true">
+        <div class="moon-disc"></div>
+        <figure class="photo-card">
+          <img class="cat-photo" src="/images/hero-assets/siamese-cat.jpg" alt="" />
+          <img class="rose-photo" src="/images/hero-assets/rose-photo.jpg" alt="" />
+          <figcaption class="caption">MORSE · ROSE · CAT · OCEAN · ONE PERSON'S UNIVERSE</figcaption>
+        </figure>
+      </div>
+    </section>
+  </main>
+  <div class="source-note">sea reference / public-domain cat / rose asset</div>
+
+  <script>
+    const DPR = Math.min(devicePixelRatio || 1, 2);
+    const layers = ['stars', 'petals', 'dust'].reduce((a, id) => { const c = document.getElementById(id), ctx = c.getContext('2d'); a[id] = {c, ctx}; return a; }, {});
+    let W, H, stars, petals, dust;
+    function resize(){
+      W = innerWidth; H = innerHeight;
+      Object.values(layers).forEach(({c,ctx}) => { c.width = W*DPR; c.height = H*DPR; c.style.width = W+'px'; c.style.height = H+'px'; ctx.setTransform(DPR,0,0,DPR,0,0); });
+      stars = Array.from({length: Math.floor(W*H/5200)}, () => ({x:Math.random()*W,y:Math.random()*H,r:Math.random()*1.4+.25,a:Math.random(),s:Math.random()*.35+.06}));
+      petals = Array.from({length: 20}, () => ({x:Math.random()*W,y:Math.random()*H,vx:Math.random()*.45+.12,vy:Math.random()*.23+.07,rot:Math.random()*6.28,vr:(Math.random()-.5)*.018,size:Math.random()*14+8}));
+      dust = [];
+    }
+    addEventListener('resize', resize); resize();
+    addEventListener('pointermove', e => { for(let i=0;i<3;i++) dust.push({x:e.clientX,y:e.clientY,vx:(Math.random()-.5)*1.8,vy:(Math.random()-.5)*1.8,r:Math.random()*2+1,life:80}); if(dust.length>130) dust.splice(0,dust.length-130); });
+    function draw(t){
+      let ctx = layers.stars.ctx; ctx.clearRect(0,0,W,H);
+      stars.forEach(s => { const a=.22+(Math.sin(t*.001*s.s+s.a*9)+1)*.26; ctx.beginPath(); ctx.fillStyle=`rgba(255,249,220,${a})`; ctx.arc(s.x,s.y,s.r,0,6.28); ctx.fill(); });
+      ctx = layers.petals.ctx; ctx.clearRect(0,0,W,H);
+      petals.forEach(p => { p.x+=p.vx+Math.sin(p.y*.01)*.18; p.y+=p.vy; p.rot+=p.vr; if(p.x>W+40)p.x=-40; if(p.y>H+40)p.y=-40; ctx.save(); ctx.translate(p.x,p.y); ctx.rotate(p.rot); ctx.scale(1,.55); const g=ctx.createRadialGradient(0,0,1,0,0,p.size); g.addColorStop(0,'rgba(255,238,232,.62)'); g.addColorStop(.55,'rgba(169,61,86,.45)'); g.addColorStop(1,'rgba(120,38,52,.05)'); ctx.fillStyle=g; ctx.beginPath(); ctx.ellipse(0,0,p.size,p.size*.72,0,0,6.28); ctx.fill(); ctx.restore(); });
+      ctx = layers.dust.ctx; ctx.clearRect(0,0,W,H);
+      dust.forEach(d => { d.x+=d.vx; d.y+=d.vy; d.life--; const a=Math.max(d.life/80,0); ctx.beginPath(); ctx.fillStyle=`rgba(255,250,220,${a*.42})`; ctx.arc(d.x,d.y,d.r,0,6.28); ctx.fill(); });
+      dust = dust.filter(d => d.life>0);
+      requestAnimationFrame(draw);
+    }
+    requestAnimationFrame(draw);
+  </script>
+</body>
+</html>
