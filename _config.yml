@@ -29,6 +29,7 @@ category_dir: categories
 code_dir: downloads/code
 i18n_dir: :lang
 skip_render:
+  - 3b285438-e417-4308-ae98-dcaf9c423a9d/**
 
 # Writing
 new_post_name: :title.md # File name of new posts
