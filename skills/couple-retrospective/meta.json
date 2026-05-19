@@ -1,0 +1,16 @@
+{
+  "name": "couple-retrospective",
+  "version": "4.1",
+  "category": "couple-retrospective",
+  "description": "情侣复盘对抗分析框架 — 五层蒸馏 + 三代理对抗 + 动态黑名单。用于任意情侣/搭档关系的定期复盘，诊断冲突模式，输出可执行改进方案。",
+  "author": "cengjing",
+  "tags": ["relationship", "adversarial", "couple"],
+  "created": "2026-04-27",
+  "updated": "2026-05-20",
+  "distilled_from": "create-yourself + adversarial-content-review",
+  "associated_vault": "G:\\Obsidian\\vaults\\第二大脑\\01_知识技能\\方法论\\依恋理论框架\\",
+  "sub_skills": [
+    "couple-retrospective-adversarial",
+    "couple-attachment-analysis"
+  ]
+}

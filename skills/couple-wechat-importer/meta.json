@@ -1,0 +1,17 @@
+{
+  "name": "couple-wechat-importer",
+  "version": "1.1",
+  "category": "couple-retrospective",
+  "description": "情侣复盘系统 · 微信聊天记录读取器。内置完整微信解密工具，可直接从微信进程提取key并解密数据库，提取特定联系人的聊天记录，输出时间线、行为分析、依恋标记、论文级解读，为复盘提供结构化素材。",
+  "author": "cengjing",
+  "tags": ["wechat", "importer", "couple", "retrospective", "decrypt"],
+  "created": "2026-05-20",
+  "updated": "2026-05-20",
+  "built_in_tools": {
+    "wechat_decryptor.py": "微信数据库解密主脚本",
+    "wechat_parser.py": "聊天记录解析脚本",
+    "wxManager/decrypt/": "核心解密库（get_wx_info + decrypt_v3 + version_list）"
+  },
+  "requires": [],
+  "pairs_with": ["couple-retrospective", "couple-retrospective-adversarial", "couple-attachment-analysis"]
+}

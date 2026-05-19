@@ -1,0 +1,12 @@
+{
+  "name": "couple-retrospective-adversarial",
+  "version": "1.1",
+  "category": "couple-retrospective",
+  "description": "多轮对抗式对话子技能。使用 delegate_task 驱动双代理模拟情侣冲突，最少8轮，输出五层心智定位与打分矩阵。需配合 couple-retrospective 主框架使用。",
+  "author": "cengjing",
+  "tags": ["adversarial", "dialogue", "couple", "multi-agent"],
+  "created": "2026-04-28",
+  "updated": "2026-05-20",
+  "requires": ["couple-retrospective"],
+  "pairs_with": ["couple-retrospective", "couple-attachment-analysis"]
+}

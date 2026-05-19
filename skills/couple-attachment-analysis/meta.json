@@ -1,0 +1,18 @@
+{
+  "name": "couple-attachment-analysis",
+  "version": "2.0",
+  "category": "couple-retrospective",
+  "description": "通用焦虑型 vs 回避型依恋分析模板。输入任意情侣的行为数据，输出依恋类型判断、追逃模式定位、干预路径建议。不含 personalized 内容，可复用。",
+  "author": "cengjing",
+  "tags": ["attachment", "anxious-avoidant", "couple", "template"],
+  "theory_base": "G:\\Obsidian\\vaults\\第二大脑\\01_知识技能\\方法论\\依恋理论框架\\",
+  "papers": [
+    "焦虑型与回避型依恋的社会化研究（蒋文泽/李松岳，2026）— 追逐-逃避循环",
+    "蜜糖砒霜——高情感需求与低情感供给的结构性冲突（南京大学，2026）— 结构性不兼容",
+    "怎么停止期待一个你明知不可能的人（璩双双等，2026）— EWDM模型"
+  ],
+  "key_insight": "回避是生理充能反应，追逐是生理驱动，双方都在被系统驱动。行为伤害了对方，但动机不是坏的。结构性冲突 ≠ 沟通问题 ≠ 努力不够。",
+  "created": "2026-04-29",
+  "updated": "2026-05-20",
+  "note": "v2.0 已从 personalized 档案重构为通用模板。团团×壮壮 专用内容已迁移至 archive-tuantuan-zhuangzhuang skill。"
+}
